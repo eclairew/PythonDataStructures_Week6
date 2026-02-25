@@ -5,37 +5,41 @@
 - We've now covered the simple variable types in Python: integers, floats, strings, and bools.
 - However, there are several more complex types of variables that allow us to store and access multiple values.
 - Perhaps the most versatile and common of these more complex types are lists.
-- Lists are always specified using square brackets - `[]`
+- Lists are always specified using square brackets - `[]` (These are like vectors in R)
 - Lists can contain an arbitrary number and type of simpler variables, but we often want to use only one type in a list so as not to get confused.
     - `listOfNums = [1,2,3,4]`
     - `listOfFloats = [3.14, 2.0, 12.3]`
     - `listOfStrings = ["Ecology", "Evolution", "Systematics"]`
     - `listOfBools = [True, False, False, True]`
 - Even after they are created, lists can be modified. Individual elements can be added using the append method():
-    - `listOfNums.append(5)` - Examine list after executing
+    - `listOfNums.append(5)` - Examine list after executing (append is a **method** here to the list function)
     - `listOfStrings.append("Neurobiology")`
 - Elements can be removed using a few different methods.
-    - Try `listOfFloats.pop()` - What is returned? And what does the list look like now?
-    - You can remove specific values from a list, regardless of their position, by using the `remove(<VALUE>)` method. What happens when you execute `listOfBools.remove(False)`? How does the list change?
-- Lists can contain lists as elements. For instance, try this:
+    - Try `listOfFloats.pop()` - What is returned? And what does the list look like now? (This removes the last value in a list and returns the value that was removed)
+    - You can remove specific values from a list, regardless of their position, by using the `remove(<VALUE>)` method. What happens when you execute `listOfBools.remove(False)`? How does the list change? (This requires you to specify the value and does not return the value that was removed)
+- Lists can contain lists as elements (this way you can nest lists within larger lists, that list is then stored as a single value). For instance, try this:
     - `newList = []`
     - `newList.append([1,2,3])`
     - `newList.append([4,5,6])`
     - `newList.append([12,13,14])`
+    - append only wants one thing at a time
 - But you can also add all the _individual elements_ of one list to another. Try this:
     - `newList = [1,2,3]`
     - `newList.extend([4,5,6])`
     - `newList.extend([12,13,14])`
     - How does `newList` differ from what you got when you used `append()`?
-- You can view or extract parts of a list by using indices and "slicing" the list (just remember that python starts counting at 0!)
+- The following arguments will not modify the list object like the previously discussed methods:
+-  You can view or extract parts of a list by using indices and "slicing" the list (just remember that python starts counting at 0!)
     - `newList[4:7]` - What values are returned? How do these relate to the indices you provided?
 - You can also extract every n-th element of a list using notation like this:
-    - `newList[::2]` - What values are returned now?
+    - `newList[::2]` - What values are returned now? (The third argument will specify an interval of which values to return, so here it will return every other value in the list)
     - `newList[2:8:2]` - How about now?
 - You can also alter individual elements of lists by using indices
     - `newList`
     - `newList[2] = 100`
     - `newList`
+- The method acts on the list it is given, you cannot assign it to a new list when using the method all in the same line
+- If you set one list equal to another it is a shallow copy and those will always equal one another unless you use the copy method (which is a deep copy)
 
 ## `for` loops
   
