@@ -82,6 +82,7 @@ for num in range(10):
     - `myTuple`
     - `myTuple[1]`
     - `myTuple[1] = 5`
+    - Tuples have the count and index method but only because they are summarizing methods and not modifying methods.
 
 ## While loops
 
