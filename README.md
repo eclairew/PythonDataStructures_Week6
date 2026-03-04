@@ -125,7 +125,7 @@ while num < 10:
 - The `<MODE>` argument tells Python whether we are reading from a file (`r`), writing to a file (`w`), or appending to a file (`a`).
 - To open up a new File object to read file contents, use syntax like this:
     - `inFile = open(inFileName,'r')`
-- There are several useful methods associated with file objects, but one of the most commonly used is `readline()`. This method will read lines one-by-one from the file. Note that the end of line character (\n) is retained when the line is read in.
+- There are several useful methods associated with file objects, but one of the most commonly used is `readline()`. This method will read lines one-by-one from the file. Note that the end of line character (\n) is retained when the line is read in. Each time you use this method it moves past the lines that have been read.
     - `firstLine = inFile.readline()`
 - Files opened for reading can be used in a `for` loop, as follows, to go through all the lines in the file:
 
@@ -167,6 +167,8 @@ while num < 10:
     - `firstList`
     - `random.shuffle(firstList)`
     - `firstList`
+    - dendropy is a phylogenetics python library (may want to use)
+    - You can import certain functions from libraries by typing from *library* import *function*.
 
 ## Command-line Arguments
   
@@ -174,7 +176,7 @@ while num < 10:
 - To easily deal with command-line arguments, we're going to take advantage of some functions in the `sys` library. So we'll need to start by importing that library:
     - `import sys`
 - Any command-line arguments we pass to a script can then be accessed using the `sys.argv` variable.
-    - `print(sys.argv[2])`
+    - `print(sys.argv[2])` <- this is like $@ in bash
     - Which argument is printed when you run the line above? Does that make sense with the 0-based indexing in Python?
 - We can also loop through all command-line arguments:
 
